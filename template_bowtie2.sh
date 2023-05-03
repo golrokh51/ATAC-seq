@@ -62,10 +62,10 @@ echo "bowtie2 --threads 40 --very-sensitive -X 1000Â  -k 10 --un $ump --al $mmpÂ
 
 # samtools sort  -@ 32 -n  -o $bam $sam
 # echo "samtools sort"
-# samtools stats $sam >$samstat
-# echo "samtools stats"
+samtools stats $sam >$samstat
+echo "samtools stats"
 # echo $bam >>_all_bam.txt
-# echo $samstat >>_all_samstat.txt
+echo $samstat >>_all_samstat.txt
 
 
 # grep ">" /scratch/banire/genomes/AzucenaRS1/GCA_009830595.1_AzucenaRS1_genomic.12chr_chloroplast.fa | while read -r line; do  chr="${line:1}"; echo $chr>>_list_chr.txt; done
