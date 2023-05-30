@@ -76,13 +76,17 @@ This pipeline is based on <a href="https://github.com/harvardinformatics/ATAC-se
       </ul>
 <h3 id="chrremove">Remove chloroplast alignements</h3>
   <h4 id="filter">samtools view</h4>
+    <ul>
+    <li>file name: <code>template_bFilter_sam.sh</code></li>
+    <li>commandes:</li>
       <ul>
-    commandes:
+        <li><code>samtools index $f1 # to filter by chromosome, samtools need indexed bam input</code></li>   
         <li><code>samtools view -H $f1 | grep -v "@SQ\sSN:GU592207\.1\sLN:134551" >$filtered</code></li>   
         <li>loup over wanted chromosomes:</li>
           <code>mapfile -t lines < $chroms</code></br>
           <code>for line in "${lines[@]}"; do samtools view $f1 $line >>$filtered; done</code>
-      </ul>     
+      </ul> 
+  </ul>
 <h3 id="sam2bam">SAM to BAM</h3> 
       <h4 id="sam2bam">samtools view</h4>
       <ul>
