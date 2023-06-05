@@ -111,9 +111,15 @@ This pipeline is based on <a href="https://github.com/harvardinformatics/ATAC-se
         <li>commande: <code>java -jar -Xmx32g $EBROOTPICARD/picard.jar MarkDuplicates INPUT=$f1 OUTPUT=$marked METRICS_FILE=$metric</code></li>
       </ul>
    </ol>
+
  <h3 id="macs2">Peak calling</h3>
-  <h4 id="sambamb">MACS2</h4>
-  <ul>
+   <h4 id="bam2bed">BAM to BED</h4>
+      <ul>
+        <li>file name: <code>template_bam2bed.sh</code></li>
+        <li>command: <code>bedtools bamtobed -color 255,0,0 -bed12 -cigar -i $f1 > $bed</code></li>
+      </ul>
+   <h4 id="sambamb">MACS2</h4>
+     <ul>
         <li>file name: <code>template_macs2.sh</code></li>
         <li>commande: <code>macs2 callpeak -t $f1 --nomodel -g 379627553 -f BED -n $out -q 0.05 --extsize 200 --shift -100 --keep-dup all -B</code></li>
- </ul> 
+     </ul> 
