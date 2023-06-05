@@ -98,11 +98,18 @@ This pipeline is based on <a href="https://github.com/harvardinformatics/ATAC-se
         <li>commande: <code>mugqic/MultiQC/1.14 -m samtools --outdir ../results/_BAM/_filtered $WORK_DIR/$1/results/_BAM/_filtered/*_filtered_stats.txt</code></li>  
       </ul> 
 <h3 id="markdup">MarkDuplicate</h3>
-  <h4 id="sambamb">sambamba markdup</h4>
-  <ul>
+  <ol>
+    <li><h4 id="sambamb">sambamba markdup</h4></li>
+      <ul>
         <li>file name: <code>template_sambambaMarkDup.sh</code></li>
         <li>commande: <code>sambamba markdup $f1 $marked</code></li>
- </ul> 
+      </ul>
+    <li><h4 id="picard">Picard markdup</li>
+      <ul>
+        <li>file name: <code>template_MarkDup.sh</code></li>
+        <li>commande: <code>java -jar -Xmx32g $EBROOTPICARD/picard.jar MarkDuplicates INPUT=$f1 OUTPUT=$marked METRICS_FILE=$metric</code></li>
+      </ul>
+   </ol>
  <h3 id="macs2">Peak calling</h3>
   <h4 id="sambamb">MACS2</h4>
   <ul>
