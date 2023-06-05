@@ -97,7 +97,7 @@ This pipeline is based on <a href="https://github.com/harvardinformatics/ATAC-se
         <li>file name: <code>template_mqc3.sh</code></li>
         <li>commande: <code>mugqic/MultiQC/1.14 -m samtools --outdir ../results/_BAM/_filtered $WORK_DIR/$1/results/_BAM/_filtered/*_filtered_stats.txt</code></li>  
       </ul> 
-<h3 id="genrich"><a href="https://github.com/golrokh51/ATAC-seq/blob/main/Genrich">Genrich pipeline</a></h3>
+<h3 id="genrich"><a href="https://github.com/golrokh51/ATAC-seq/blob/main/Genrich.md">Genrich pipeline</a></h3>
 <h3 id="markdup">MarkDuplicate</h3>
   <ol>
     <li><h4 id="sambamb">sambamba markdup</h4></li>
