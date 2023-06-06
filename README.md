@@ -111,7 +111,6 @@ This pipeline is based on <a href="https://github.com/harvardinformatics/ATAC-se
         <li>commande: <code>java -jar -Xmx32g $EBROOTPICARD/picard.jar MarkDuplicates INPUT=$f1 OUTPUT=$marked METRICS_FILE=$metric</code></li>
       </ul>
    </ol>
-
  <h3 id="macs2">Peak calling</h3>
    <h4 id="bam2bed">BAM to BED</h4>
       <ul>
