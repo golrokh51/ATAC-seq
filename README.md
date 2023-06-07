@@ -1,13 +1,12 @@
 # ATAC-seq
 <h2 id="tools">Tools</h2>
-  <h4 id="fastqc">FastQC, <code>fastqc/0.11.9</code></h4>
-  <h4 id="multiqc">MultiQC, <code>MultiQC/1.14</code></h4>
-  <h4 id="trimmomatic">Trimmomatic, <code>trimmomatic/0.39</code></h4>
-  <h4 id="aligner">Bowtie2, <code>bowtie2/2.4.4</code></h4>
-  <h4 id="samtools">Samtools, <code>samtools/1.16.1</code></h4>
-  <h4 id="sambamba">[Sambamba](#sambamba-markdup), <code>sambamba/0.8.0</code></h4>
+  <h4 id="fastqc"><a href="#fastqc">FastQC</a>, <code>fastqc/0.11.9</code></h4>
+  <h4 id="multiqc"><a href="#multiqc">MultiQC</a>, <code>MultiQC/1.14</code></h4>
+  <h4 id="trimmomatic"><a href="#trim">Trimmomatic</a>, <code>trimmomatic/0.39</code></h4>
+  <h4 id="aligner"><a href="#align">Bowtie2</a>, <code>bowtie2/2.4.4</code></h4>
+  <h4 id="samtools"><a href="#samstat">Samtools</a>, <code>samtools/1.16.1</code></h4>
   <h4 id="sambamba"><a href="#sambamba-markdup">Sambamba</a>, <code>sambamba/0.8.0</code></h4>
-  <h4 id="macs2">MACS2, <code>macs2/2.2.7.1</code></h4>
+  <h4 id="macs2"><a href="#macs2">MACS2</a>, <code>macs2/2.2.7.1</code></h4>
   
 <h2 id="steps">Steps</h2>
 <p id="note">
@@ -61,7 +60,7 @@ This pipeline is based on <a href="https://github.com/harvardinformatics/ATAC-se
         <li>commande:</li><code>bowtie2 --threads 40 --very-sensitive -X 1000  -k 10 --un $ump --al $mmp  --met-file $metric $rgline  -x $indx -1 $f1 -2 $f2 -S $sam 2>$logf</code>
       </ul>     
 <h3 id="alignsort">Alignment QC and Sorting</h3>
-  <h4 id="filter">samtools stat</h4>
+  <h4 id="samstat">samtools stat</h4>
       <ul>
         <li>file name: <code>template_samstat1.sh</code></li>
         <li>commande: <code>samtools stats $sam >$samstat</code></li>  
@@ -71,7 +70,7 @@ This pipeline is based on <a href="https://github.com/harvardinformatics/ATAC-se
         <li>file name: <code>template_mqc2.sh</code></li>
         <li>commande: <code>mugqic/MultiQC/1.14 -m bowtie2 --outdir ../results/_logs/_bowtie2 $WORK_DIR/$1/results/_logs/_bowtie2/*</code></li>  
       </ul>    
-  <h4 id="filter">samtools sort</h4>
+  <h4 id="samsort">samtools sort</h4>
       <ul>
         <li>commande: <code>samtools sort -@ 48 -o $ssam $sam</code></li>
       </ul>
@@ -116,7 +115,7 @@ This pipeline is based on <a href="https://github.com/harvardinformatics/ATAC-se
         <li>file name: <code>template_bam2bed.sh</code></li>
         <li>command: <code>bedtools bamtobed -color 255,0,0 -bed12 -cigar -i $f1 > $bed</code></li>
       </ul>
-   <h4 id="sambamb">MACS2</h4>
+   <h4 id="macs2">MACS2</h4>
      <ul>
         <li>file name: <code>template_macs2.sh</code></li>
         <li>commande: <code>macs2 callpeak -t $f1 --nomodel -g 379627553 -f BED -n $out -q 0.05 --extsize 200 --shift -100 --keep-dup all -B</code></li>
