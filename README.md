@@ -5,7 +5,7 @@
   <h4 id="trimmomatic">Trimmomatic, <code>trimmomatic/0.39</code></h4>
   <h4 id="aligner">Bowtie2, <code>bowtie2/2.4.4</code></h4>
   <h4 id="samtools">Samtools, <code>samtools/1.16.1</code></h4>
-  <h4 id="sambamba">[Sambamba](./REDME.md#markdup), <code>sambamba/0.8.0</code></h4>
+  <h4 id="sambamba">[Sambamba](#sambamba-markdup), <code>sambamba/0.8.0</code></h4>
   <h4 id="macs2">MACS2, <code>macs2/2.2.7.1</code></h4>
   
 <h2 id="steps">Steps</h2>
@@ -97,20 +97,18 @@ This pipeline is based on <a href="https://github.com/harvardinformatics/ATAC-se
         <li>file name: <code>template_mqc3.sh</code></li>
         <li>commande: <code>mugqic/MultiQC/1.14 -m samtools --outdir ../results/_BAM/_filtered $WORK_DIR/$1/results/_BAM/_filtered/*_filtered_stats.txt</code></li>  
       </ul> 
-<h3 id="genrich"><a href="https://github.com/golrokh51/ATAC-seq/blob/main/Genrich.md">Genrich pipeline</a></h3>
+<h3 id="genrich"><a href="https://github.com/golrokh51/ATAC-seq/blob/main/Genrich.md" target="_blank">Genrich pipeline</a></h3>
 <h3 id="markdup">MarkDuplicate</h3>
-  <ol>
-    <li><h4 id="sambamb">sambamba markdup</h4></li>
+  <h4 id="sambamb">sambamba markdup</h4></li>
       <ul>
         <li>file name: <code>template_sambambaMarkDup.sh</code></li>
         <li>commande: <code>sambamba markdup $f1 $marked</code></li>
       </ul>
-    <li><h4 id="picard">Picard markdup</li>
+<!--     <li><h4 id="picard">Picard markdup</li>
       <ul>
         <li>file name: <code>template_MarkDup.sh</code></li>
         <li>commande: <code>java -jar -Xmx32g $EBROOTPICARD/picard.jar MarkDuplicates INPUT=$f1 OUTPUT=$marked METRICS_FILE=$metric</code></li>
-      </ul>
-   </ol>
+      </ul> -->
  <h3 id="macs2">Peak calling</h3>
    <h4 id="bam2bed">BAM to BED</h4>
       <ul>
