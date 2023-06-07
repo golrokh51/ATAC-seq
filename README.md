@@ -6,6 +6,7 @@
   <h4 id="aligner">Bowtie2, <code>bowtie2/2.4.4</code></h4>
   <h4 id="samtools">Samtools, <code>samtools/1.16.1</code></h4>
   <h4 id="sambamba">[Sambamba](#sambamba-markdup), <code>sambamba/0.8.0</code></h4>
+  <h4 id="sambamba"><a href="#sambamba-markdup">Sambamba</a>, <code>sambamba/0.8.0</code></h4>
   <h4 id="macs2">MACS2, <code>macs2/2.2.7.1</code></h4>
   
 <h2 id="steps">Steps</h2>
